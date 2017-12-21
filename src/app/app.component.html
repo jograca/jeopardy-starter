@@ -1,16 +1,26 @@
+<h2>Play Jeopardy!</h2>
+
 <div>
-  <b>Point Value: </b>
+  <b>Point Value: </b>{{ questionInfo?.value }}
 </div>
 <br>
 <div>
-  <b>The Question is: </b>{{questionInfo?.question}}
+  <b>The Question is: </b>{{ questionInfo?.question }}
 </div>
 <br>
 <div>
-  <b>Category: </b>
+  <b>Category: </b>{{ questionInfo?.category.title }}
 </div>
 <br>
 <div>
   <b>Score: </b>
 </div>
 
+
+<h2>Your Answer:</h2>
+  <form>
+    <div>
+      "What Is ..."
+      <input type="text">
+    </div>
+</form>

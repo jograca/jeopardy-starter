@@ -9,11 +9,13 @@ import {JeopardyService } from './jeopardy.service';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  questionInfo;
+  questionInfo: string;
 
-  constructor(private jeopardyService: JeopardyService){}
+  constructor(private jeopardyService: JeopardyService) {
 
-  getDataFromService(){
+  }
+
+  getDataFromService() {
     this.jeopardyService.getQuestionInfo()
       .subscribe(
         questionInfo => {
@@ -22,8 +24,9 @@ export class AppComponent implements OnInit {
       )
   }
 
-  ngOnInit(){
-    this.getDataFromService()
+  ngOnInit() {
+    this.getDataFromService();
+
   }
 
 }
