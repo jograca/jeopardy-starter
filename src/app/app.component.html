@@ -13,14 +13,12 @@
 </div>
 <br>
 <div>
-  <b>Score: </b>
+  <b>Score: </b>{{ overallScore }}
 </div>
 
+<br>
+<div>
+  <b>Answer Is: </b>{{ questionInfo?.answer }}
+</div>
 
-<h2>Your Answer:</h2>
-  <form>
-    <div>
-      "What Is ..."
-      <input type="text">
-    </div>
-</form>
+<app-answer-component>(buttonClicked)="evaluateAnswer($event)" [questionInfo]="questionInfo"</app-answer-component>
