@@ -14,4 +14,9 @@
 </div>
 
 <br>
-<app-answer-component (newGame)="getDataFromService($event)"  [questionInfo]="questionInfo"></app-answer-component>
+<div>
+    <b>Your Score: </b> {{ scoreKeeper.overallScore }}
+</div>
+
+<br>
+<app-answer-component #scoreKeeper (newGame)="getDataFromService($event)"  [questionInfo]="questionInfo"></app-answer-component>

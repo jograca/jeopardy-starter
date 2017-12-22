@@ -14,12 +14,13 @@ export class AnswerComponentComponent implements OnInit {
   @Input() questionInfo;
   @Output() newGame = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  evaluateAnswer() {
+  evaluateAnswer(): void {
     if (this.userAnswer === this.questionInfo.answer) {
       this.overallScore += this.questionInfo.value;
       this.userMessage = 'Correct! You Won $' + this.questionInfo.value;
