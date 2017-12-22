@@ -7,6 +7,7 @@ import {JeopardyService } from './jeopardy.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title = 'app';
 
   questionInfo;
 
@@ -25,7 +26,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getDataFromService();
+    this.getDataFromService()
 
   }
 

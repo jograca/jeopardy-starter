@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AnswerComponentComponent implements OnInit {
 
-  userAnswer: string;
   overallScore = 0;
+  userAnswer: string;
 
   @Input() questionInfo;
   @Output() buttonClicked = new EventEmitter<string>();
@@ -20,11 +20,11 @@ export class AnswerComponentComponent implements OnInit {
 
   evaluateAnswer() {
     console.log('reached!!');
-
-    if (this.userAnswer = this.questionInfo.answer) {
-      this.overallScore += this.questionInfo.value;
-    }
+    console.log(this.userAnswer);
+    console.log(this.questionInfo.answer);
+    // if (this.userAnswer = this.questionInfo.answer) {
+    //   this.overallScore += this.questionInfo.value;
+    // }
     this.userAnswer = '';
-    this.buttonClicked.emit('string from the child');
   }
 }
