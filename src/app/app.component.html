@@ -5,11 +5,11 @@
 </div>
 <br>
 <div>
-  <b>The Question is: </b>{{ questionInfo?.question }}
+  <b>Category: </b>{{ questionInfo?.category.title }}
 </div>
 <br>
 <div>
-  <b>Category: </b>{{ questionInfo?.category.title }}
+  <b>The Question is: </b>{{ questionInfo?.question }}
 </div>
 <br>
 <div>
@@ -17,8 +17,4 @@
 </div>
 
 <br>
-<div>
-  <b>Answer Is: </b>{{ questionInfo?.answer }}
-</div>
-
 <app-answer-component [questionInfo]="questionInfo"></app-answer-component>

@@ -9,6 +9,7 @@ export class AnswerComponentComponent implements OnInit {
 
   overallScore = 0;
   userAnswer: string;
+  winMessage: string;
 
   @Input() questionInfo;
   @Output() buttonClicked = new EventEmitter<string>();
@@ -19,12 +20,10 @@ export class AnswerComponentComponent implements OnInit {
   }
 
   evaluateAnswer() {
-    console.log('reached!!');
-    console.log(this.userAnswer);
-    console.log(this.questionInfo.answer);
-    // if (this.userAnswer = this.questionInfo.answer) {
-    //   this.overallScore += this.questionInfo.value;
-    // }
-    this.userAnswer = '';
+    if (this.userAnswer === this.questionInfo.answer) {
+      this.overallScore += this.questionInfo.value;
+      this.winMessage = 'You Won $' + this.questionInfo.value + '!';
+   }
+    this.userAnswer = ' ';
   }
 }
