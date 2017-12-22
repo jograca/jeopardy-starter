@@ -9,10 +9,10 @@ export class AnswerComponentComponent implements OnInit {
 
   overallScore = 0;
   userAnswer: string;
-  winMessage: string;
+  userMessage: string;
 
   @Input() questionInfo;
-  @Output() buttonClicked = new EventEmitter();
+  @Output() newGame = new EventEmitter();
 
   constructor() { }
 
@@ -22,9 +22,15 @@ export class AnswerComponentComponent implements OnInit {
   evaluateAnswer() {
     if (this.userAnswer === this.questionInfo.answer) {
       this.overallScore += this.questionInfo.value;
-      this.winMessage = 'You Won $' + this.questionInfo.value + '!';
-   }
-    this.userAnswer = ' ';
+      this.userMessage = 'You Won $' + this.questionInfo.value + '!';
+    } else {
+      this.userMessage = 'Incorrect!'
+    }
+    this.userAnswer = '';
+  }
+
+  newQuestion() {
+    this.newGame.emit();
   }
 
 }

@@ -3,22 +3,23 @@
 <br>
 <br>
 <div>
-        <b>Your Score: </b> {{ overallScore }}
-    </div>
+    <b>Your Score: </b> {{ overallScore }}
+</div>
+<br>
+<div>
+    <b>{{ userMessage }}</b>
+</div>
 <br>
 <br>
 <div>
-    <b>Your Answer:</b>
+    <b>Your Guess:</b>
     <input type="text" [(ngModel)]="userAnswer">
 </div>
 
 <br>
 <div>
-    <button (click)="evaluateAnswer()">Answer Question</button>
-    <button (click)="ngOnInit()">Play Again</button>
+    <button (click)="evaluateAnswer()">Guess</button>
+    <button (click)="newQuestion()">New Question</button>
 </div>
 
-<br>
-<div>
-    <b>{{ winMessage }}</b>
-</div>
+

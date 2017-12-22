@@ -13,4 +13,4 @@
 </div>
 
 <br>
-<app-answer-component [questionInfo]="questionInfo"></app-answer-component>
+<app-answer-component (newGame)="getDataFromService($event)"  [questionInfo]="questionInfo"></app-answer-component>
