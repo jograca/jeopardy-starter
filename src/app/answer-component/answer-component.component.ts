@@ -30,6 +30,7 @@ export class AnswerComponentComponent implements OnInit {
   }
 
   newQuestion() {
+    this.userMessage = '';
     this.newGame.emit();
   }
 
