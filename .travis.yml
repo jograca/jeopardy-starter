@@ -1,10 +1,17 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 branches:
   only:
-    - master
+  - master
 before_script:
-  - npm install
+- npm install
 script:
-  - ng build
+- ng build
+deploy:
+  provider: heroku
+  api_key:
+    secure: P1DCsYreIHXxR/iL8Ghzw38QK+TGNXabZP0GTfbHWFpVy/WOb9ivp1ez4bC84M9iSs3AWWAvGBvf8xRmWu+BQsqkqBnwg7s0L3d7Wfm627ibafhUFaguwBVJ01/CQeT7xQ53+7wBrw1dcVsqjfw4Cl4TBS4/wgNzoXI3qaNl3NoWqQpBCF1FYxruCNt5e3gH/0+jGXzdyeTOTI83P6424KnzE+aZ0pVQy+6DxlhkSls+qtoDqYhWeXsVqtHyVLA3MFf5GmTEw7bpzE+EnMteq13MNDpcTlEHk+VKHw/nIAnYrs4O6v7keWZNJx5ZPkyuB3xRVZy7P7ypmUWSxMLMI9DgYGmDm+VJTlw6kLnHirqa+v7gBnA/CBd3Rol96m/LURwQ8DZx06jdpXd+Oz5kciHiIsBcFtL2PE1YjXnwA00Hv6BFNRZPUtUeRMzfhqNE3HEsb1jZRWqt1ky4Rvcd07PFO1rt3KwC1Uv++NXzyL6TPOQ9P4XeFgR7+Q2y7HANox26efitkRkckvBc3K8GoZ2Fzp7B6nXeEqCJVRRgMffvE2BNWDjpDP9TMXcQPhrCxevVGvXf71AM7bEAvhcbnlEja9ya/UNu8+MqP5KmyO8D2Sw6mz848kvafgWXpVVx1Q0WQBKdyVbgfNWL0nx5bCx4gK+m41OeE49rgwahQYA=
+  app: noh-jeopardy
+  on:
+    repo: jograca/jeopardy-starter
