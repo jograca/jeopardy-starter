@@ -22,7 +22,7 @@ export class AnswerComponentComponent implements OnInit {
   evaluateAnswer() {
     if (this.userAnswer === this.questionInfo.answer) {
       this.overallScore += this.questionInfo.value;
-      this.userMessage = 'You Won $' + this.questionInfo.value + '!';
+      this.userMessage = 'Correct! You Won $' + this.questionInfo.value;
     } else {
       this.userMessage = 'Incorrect!'
     }
