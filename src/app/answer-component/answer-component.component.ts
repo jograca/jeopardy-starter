@@ -12,7 +12,7 @@ export class AnswerComponentComponent implements OnInit {
   winMessage: string;
 
   @Input() questionInfo;
-  @Output() buttonClicked = new EventEmitter<string>();
+  @Output() buttonClicked = new EventEmitter();
 
   constructor() { }
 
@@ -26,4 +26,5 @@ export class AnswerComponentComponent implements OnInit {
    }
     this.userAnswer = ' ';
   }
+
 }
