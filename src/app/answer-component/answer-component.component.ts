@@ -11,7 +11,7 @@ export class AnswerComponentComponent implements OnInit {
   overallScore = 0;
 
   @Input() questionInfo;
-  @Output() buttonClicked = new EventEmitter();
+  @Output() buttonClicked = new EventEmitter<string>();
 
   constructor() { }
 
@@ -20,12 +20,11 @@ export class AnswerComponentComponent implements OnInit {
 
   evaluateAnswer() {
     console.log('reached!!');
-    console.log(this.questionInfo.answer);
-    console.log(this.userAnswer);
 
     if (this.userAnswer = this.questionInfo.answer) {
       this.overallScore += this.questionInfo.value;
     }
     this.userAnswer = '';
+    this.buttonClicked.emit('string from the child');
   }
 }
