@@ -22,8 +22,8 @@ export class AnswerComponentComponent implements OnInit {
 
   evaluateAnswer(): void {
     this.userAnswer = this.userAnswer.trim();
-    this.overallScore += this.questionInfo.value;
     if (this.userAnswer.toLowerCase() === this.questionInfo.answer.toLowerCase()) {
+      this.overallScore += this.questionInfo.value;
       this.userMessage = this.questionInfo.answer + ' is correct! You Won $' + this.questionInfo.value;
     } else {
       this.userMessage = 'Incorrect! Answer was: ' + this.questionInfo.answer;
