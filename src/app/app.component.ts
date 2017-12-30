@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
       .subscribe(
         questionInfo => {
           this.questionInfo = questionInfo[0];
+          if (this.questionInfo.value == null) {
+            this.getDataFromService();
+          }
           console.log(this.questionInfo.answer);
         }
       )
