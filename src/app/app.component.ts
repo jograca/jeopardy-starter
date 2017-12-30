@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
           if (this.questionInfo.value == null) {
             this.getDataFromService();
           }
+          if (this.questionInfo.answer.includes('<i>')) {
+            console.log('italics found, removing question');
+            this.getDataFromService();
+          }
           console.log(this.questionInfo.answer);
         }
       )

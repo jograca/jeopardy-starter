@@ -36,7 +36,6 @@ export class AnswerComponentComponent implements OnInit {
   newQuestion() {
     this.userMessage = '';
     this.questionCount = this.questionCount + 1;
-    console.log('Question No: ' + this.questionCount);
     this.newGame.emit();
   }
 
