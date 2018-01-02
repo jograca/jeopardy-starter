@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {JeopardyService } from './jeopardy.service';
+import {NewsService} from './news.service';
 import { AnswerComponentComponent } from './answer-component/answer-component.component';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AnswerComponentComponent } from './answer-component/answer-component.co
     FormsModule
   ],
   providers: [
-    JeopardyService
+    JeopardyService,
+    NewsService
   ],
   bootstrap: [AppComponent]
 })

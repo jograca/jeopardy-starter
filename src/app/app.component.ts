@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {JeopardyService } from './jeopardy.service';
+import { NewsService } from './news.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import {JeopardyService } from './jeopardy.service';
 export class AppComponent implements OnInit {
 
   questionInfo;
+  topHeadline;
 
-  constructor(private jeopardyService: JeopardyService) {
+  constructor(private jeopardyService: JeopardyService, private newsService: NewsService) {
 
   }
 
@@ -31,8 +33,20 @@ export class AppComponent implements OnInit {
       )
   }
 
+  getNewsFromService() {
+    this.newsService.getTopHeadline()
+      .subscribe(
+        topHeadline => {
+          this.topHeadline = topHeadline;
+          console.log('Top NYT World Article Abstract for Today: ')
+          console.log(this.topHeadline.results[0].abstract);
+        }
+      )
+  }
+
   ngOnInit() {
     this.getDataFromService()
+    this.getNewsFromService()
 
   }
 
